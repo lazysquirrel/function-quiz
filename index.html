@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	<meta charset="utf-8">
-        <title>Quizzzz 3D Quizh</title>
-		
-		 <script src="build/mathbox-bundle.js"></script>
-		<link rel="stylesheet" href="build/mathbox.css">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-        <script src="script.js" ></script>
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
-		<script
-			  src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
-			  integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
-			  crossorigin="anonymous"></script>
-		
-		<style> 
-		
-		#answers span:hover{
-		background-color: #ffb400;
-		}
-		
-		#answers span 
-		{
-		min-width: 200px;
-		height: 40px;
-		margin: 5px;
-		border: 1px solid black;
-		display: inline-block;
-		cursor: pointer;
-		padding: 5px;
-		border-radius: 5px;
-		background-color: #fff4b7;
-		text-align: center;
-		vertical-align: ;
-		border-color: #ffb400;
-		box-shadow: rgba(1,1,1,0.2) 2px 2px 5px;
-	
-		}
-		
-		img{
-  position:absolute;
-    bottom: 0;
-	display: none;
-}
+<head>
+    <meta charset="utf-8">
+    <title>3D Quiz</title>
 
+    <link rel="stylesheet" href="build/mathbox.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script
+            src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
+            integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="
+            crossorigin="anonymous"></script>
 
-		
-		</style>
-    </head>
-    <body>
-        <div id='3d_canvas'>
-		<iframe id="35AF-0001-RW" src = "function.html" width = "900" height = "320" border = "0"></iframe>
-        </div>
-		
-       <div id="answers">
-		   <span onclick='answer(this)'>a</span>
-		   <span onclick='answer(this)'>b</span>
+    <style>
+        body {
+            background-color: #204060;
+        }
 
-		   <span onclick='answer(this)'> c</span>
-		   <span onclick='answer(this)'>d </span>
-	   
-	    </div>
-		<img src="herold1.png" id ="Herold_happy"/>
-		<img src="wrong.png" id= "Herold_disappointed"/>
-        <script>
-		$(document).ready(function(){
-			startQuiz();
-			
-			$("#Herold_happy").click(function(){$("#Herold_happy").fadeOut()});
-			$("#Herold_disappointed").click(function(){$("#Herold_disappointed").fadeOut()});	
-		});
-		
-        </script>
-    </body>
+        #answers span:hover {
+            background-color: #ffb400;
+        }
+
+        #answers span {
+            min-width: 200px;
+            height: 40px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #fff4b7;
+            text-align: center;
+            border: 1px solid #ffb400;
+            box-shadow: rgba(1, 1, 1, 0.2) 2px 2px 5px;
+        }
+
+        img {
+            position: absolute;
+            bottom: 0;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id='3d_canvas'>
+    <iframe id="functionFrame" src="function.html" border="0"></iframe>
+</div>
+
+<div id="answers">
+    <span onclick='answer(this)'>a</span>
+    <span onclick='answer(this)'>b</span>
+
+    <span onclick='answer(this)'> c</span>
+    <span onclick='answer(this)'>d </span>
+
+</div>
+<img src="herold1.png" id="Herold_happy"/>
+<img src="wrong.png" id="Herold_disappointed"/>
+<script>
+    $(document).ready(function () {
+        startQuiz();
+
+        $("#Herold_happy").click(function () {
+            $("#Herold_happy").fadeOut()
+        });
+        $("#Herold_disappointed").click(function () {
+            $("#Herold_disappointed").fadeOut()
+        });
+    });
+
+    $(window).on('resize', function(){
+        resizeFunctionFrame();
+    });
+</script>
+</body>
 </html>
