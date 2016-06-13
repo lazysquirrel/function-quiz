@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="build/mathbox.css">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="script.js"></script>
+	<script src="counter.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script
             src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"
@@ -41,6 +42,13 @@
             margin: 1%;
             margin-bottom: 0%;
         }
+		
+		#answers
+		{
+			margin-top: 5px;
+			text-align: center; 
+		}
+		
         #answers span:hover {
             background-color: #ffb400;
         }
@@ -80,9 +88,15 @@
     <span onclick='answer(this)'>d </span>
 
 </div>
+<div id="counter">
+	<span>Score: <span class="counter">-</span></span>
+</div>
+
+
 <img src="herold1.png" id="Herold_happy"/>
 <img src="wrong.png" id="Herold_disappointed"/>
 <script>
+
     $(document).ready(function () {
         startQuiz();
 
