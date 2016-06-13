@@ -42,7 +42,6 @@ function showQuestion(random) {
 
 function startQuiz() {
     functionFrame = document.getElementById("functionFrame");
-    resizeFunctionFrame();
 
     var random = Math.round(Math.random() * 1000) % Questions.length;
 
@@ -76,9 +75,4 @@ function shuffleArray(array) {
         array[j] = temp;
     }
     return array;
-}
-
-function resizeFunctionFrame() {
-    functionFrame.height = $(document).height()/100*75;
-    functionFrame.width  = $(document).width()/100*98;
 }
