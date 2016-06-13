@@ -55,9 +55,11 @@ function answer(node) {
 
     if (node.innerHTML == currentQuiz.answers[0]) {
         $("#Herold_happy").fadeIn();
+		updateCounter(1);
         startQuiz();
     }
     else {
+		updateCounter(0);
         $("#Herold_disappointed").fadeIn();
     }
 
