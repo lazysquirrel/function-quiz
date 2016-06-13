@@ -15,6 +15,14 @@ var Questions =
         {
             answers: ["1 - (x*x+y*y)", "cos(x+y)", "1/ln(x*y))", "2x+5y"],
             alreadyAsked: false
+        },
+        {
+            answers: ["sin(x+y)*cos(y+x)", "cos(x+y)*sin(x*y)", "sin(x*y)*cos(y*x)", "tan(x+y)"],
+            alreadyAsked: false
+        },
+        {
+            answers: ["ln(1/x)*y", "cos(x+y)*sin(x*y)", "sin(x*y)*cos(y*x)", "tan(x+y)"],
+            alreadyAsked: false
         }
     ];
 
