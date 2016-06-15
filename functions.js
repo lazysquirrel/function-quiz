@@ -16,7 +16,7 @@ var Questions =
             alreadyAsked: false
         },
         {
-            answers: ["` 1 - (x*x+y*y) `", "` cos(x+y) `", "` 1/ln(x*y) `", "` 2x+5y `"],
+            answers: ["` 1 - (x^2 + y^2) `", "` cos(x+y) `", "` 1/ln(x*y) `", "` 2x+5y `"],
             alreadyAsked: false
         },
         {
