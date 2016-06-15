@@ -18,6 +18,7 @@ function showQuestion(random) {
     for (var a = 0; a < 4; a++) {
         var i = idx[a];
         answers.children[a].innerHTML = currentQuiz.answers[i];
+		$(answers.children[a]).data("is_right", i == 0);
     }
 }
 
@@ -34,9 +35,8 @@ function startQuiz() {
 }
 
 function answer(node) {
-    console.log(node.innerHTML);
-
-    if (node.innerHTML == currentQuiz.answers[0]) {
+   
+    if ($(node).data("is_right")) {
         $("#Herold_happy").fadeIn();
 		updateCounter(madeError ? 0 : 1);
         startQuiz();
