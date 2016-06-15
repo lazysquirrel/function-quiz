@@ -21,12 +21,25 @@
             },
             function (x, y) {
                 return 1 - (x*x+y*y);
+            },
+            function (x, y) {
+                return sin(x+y)*cos(y+x);
+            },
+            function (x, y) {
+                return Math.log(1/x)*y;
             }
+        
+        
     ];
 
     function sin(value) {
 
         return Math.sin(value)
+    }
+    
+     function cos(value) {
+
+        return Math.cos(value)
     }
 
     function showFunction(index) {

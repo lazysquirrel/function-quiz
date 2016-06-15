@@ -6,6 +6,10 @@
 
     <link rel="stylesheet" href="build/mathbox.css">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML">
+	</script>
+	<script src="functions.js"></script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script
@@ -45,7 +49,8 @@
             background-color: #ffb400;
         }
 
-        #answers span {
+        span.answerButton {
+			line-height: 36px;
             min-width: 200px;
             height: 40px;
             margin: 5px;
@@ -73,13 +78,14 @@
 </div>
 
 <div id="answers">
-    <span onclick='answer(this)'>a</span>
-    <span onclick='answer(this)'>b</span>
+    <span class="answerButton" onclick='answer(this)'>a</span>
+    <span class="answerButton" onclick='answer(this)'>b</span>
 
-    <span onclick='answer(this)'> c</span>
-    <span onclick='answer(this)'>d </span>
+    <span class="answerButton" onclick='answer(this)'>c</span>
+    <span class="answerButton" onclick='answer(this)'>d </span>
 
 </div>
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 <img src="herold1.png" id="Herold_happy"/>
 <img src="wrong.png" id="Herold_disappointed"/>
 <script>
