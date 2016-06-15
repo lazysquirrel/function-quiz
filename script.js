@@ -1,4 +1,5 @@
 var currentQuiz;
+var madeError = false;
 
 function showQuestion(random) {
     //TODO random index
@@ -23,6 +24,7 @@ function showQuestion(random) {
 function startQuiz() {
     functionFrame = document.getElementById("functionFrame");
 
+	madeError = false;
     var random = Math.round(Math.random() * 1000) % Questions.length;
 
     if (!Questions[random].alreadyAsked) {
@@ -36,9 +38,11 @@ function answer(node) {
 
     if (node.innerHTML == currentQuiz.answers[0]) {
         $("#Herold_happy").fadeIn();
+		updateCounter(madeError ? 0 : 1);
         startQuiz();
     }
     else {
+		madeError = true;
         $("#Herold_disappointed").fadeIn();
     }
 
