@@ -1,24 +1,5 @@
-var Questions =
-    [
-        {
-            answers: ["sin(x * y)", "cos(x+y)", "1/ln(x*y))", "2x+5y"],
-            alreadyAsked: false
-        },
-        {
-            answers: ["sqrt(x*y)", "cos(x+y)", "1/ln(x*y))", "2x+5y"],
-            alreadyAsked: false
-        },
-        {
-            answers: ["(x*x) +2.5*(y*y)-y)*exp(1-((x*x)+(y*y)))* 0.3", "3y", "3z*4y", "cos(x + y * 5)"],
-            alreadyAsked: false
-        },
-        {
-            answers: ["1 - (x*x+y*y)", "cos(x+y)", "1/ln(x*y))", "2x+5y"],
-            alreadyAsked: false
-        }
-    ];
-
 var currentQuiz;
+var madeError = false;
 
 function showQuestion(random) {
     //TODO random index
@@ -43,10 +24,12 @@ function showQuestion(random) {
 function startQuiz() {
     functionFrame = document.getElementById("functionFrame");
 
+	madeError = false;
     var random = Math.round(Math.random() * 1000) % Questions.length;
 
     if (!Questions[random].alreadyAsked) {
         showQuestion(random);
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 }
 
@@ -55,9 +38,11 @@ function answer(node) {
 
     if (node.innerHTML == currentQuiz.answers[0]) {
         $("#Herold_happy").fadeIn();
+		updateCounter(madeError ? 0 : 1);
         startQuiz();
     }
     else {
+		madeError = true;
         $("#Herold_disappointed").fadeIn();
     }
 
