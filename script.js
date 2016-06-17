@@ -2,7 +2,6 @@ var currentQuiz;
 var madeError = false;
 
 function showQuestion(random) {
-    //TODO random index
     currentQuiz = Questions[random];
     functionFrame.src = functionFrame.src;
 
@@ -18,31 +17,31 @@ function showQuestion(random) {
     for (var a = 0; a < 4; a++) {
         var i = idx[a];
         answers.children[a].innerHTML = currentQuiz.answers[i];
-		$(answers.children[a]).data("is_right", i == 0);
+        $(answers.children[a]).data("is_right", i == 0);
     }
 }
 
 function startQuiz() {
     functionFrame = document.getElementById("functionFrame");
 
-	madeError = false;
+    madeError = false;
     var random = Math.round(Math.random() * 1000) % Questions.length;
 
     if (!Questions[random].alreadyAsked) {
-        showQuestion(random);
-		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        showQuestion(0);
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
 }
 
 function answer(node) {
-   
+
     if ($(node).data("is_right")) {
         $("#Herold_happy").fadeIn();
-		updateCounter(madeError ? 0 : 1);
+        updateCounter(madeError ? 0 : 1);
         startQuiz();
     }
     else {
-		madeError = true;
+        madeError = true;
         $("#Herold_disappointed").fadeIn();
     }
 
