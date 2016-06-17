@@ -28,7 +28,7 @@ var Questions =
         },
         {
             answers: ["` ln(1/x)*y `", "` cos(x+y)*sin(x*y) `", "` sin(x*y)*cos(y*x) `", "` tan(x+y) `"],
-			func: function (x, y) { return Math.log(1/x)*y; }
+			func: function (x, y) { return Math.log(1/x)*y; },
             alreadyAsked: false
         }
     ];
