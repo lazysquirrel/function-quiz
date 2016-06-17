@@ -4,34 +4,12 @@
     <meta charset="utf-8">
     <title>MathBox - Procedural Vectors</title>
     <script src="build/mathbox-bundle.min.js"></script>
+    <script src="functions.js"></script>
     <link rel="stylesheet" href="build/mathbox.css">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 </head>
 <body>
 <script>
-    var functions = [
-            function (x, y) {
-                return sin(x*y);
-            },
-            function (x, y) {
-                return Math.sqrt(x*y);
-            },
-            function (x, y) {
-                return ((x*x) +2.5*(y*y)-y)*Math.exp(1-((x*x)+(y*y)))* 0.3;
-            },
-            function (x, y) {
-                return 1 - (x*x+y*y);
-            },
-            function (x, y) {
-                return sin(x+y)*cos(y+x);
-            },
-            function (x, y) {
-                return Math.log(1/x)*y;
-            }
-        
-        
-    ];
-
     function sin(value) {
 
         return Math.sin(value)
@@ -41,7 +19,7 @@
 
         return Math.cos(value)
     }
-
+    
     function showFunction(index) {
 
         mathbox = mathBox({
@@ -85,7 +63,7 @@
             height: 83,
             axes: [1, 3],
             expr: function (emit, x, y) {
-                emit(x, functions[index](x, y), y)
+                emit(x, Questions[index].func(x, y), y)
             }
         });
         view.surface({
@@ -101,8 +79,6 @@
         vector = mathbox.select('vector');
     }
 </script>
-
-<!--<button style="position: absolute;top: 0;left: 0" onclick="dumpData()">dump data</button>-->
 
 </body>
 </html>
